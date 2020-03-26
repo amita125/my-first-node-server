@@ -19,23 +19,16 @@ function showImage() {
   });
 }
 
-//trial version
-// function showImage2() {
-//   document.getElementById("form").style.display = "none";
-//   document.querySelector(".img-section").style.display = "block";
-//   let search = document.getElementById("img1").value;
-//   let imgSearch =
-//     "https://source.unsplash.com/featured/160x90/?" + "{" + search + "}";
-//   fetch(imgSearch).then(response => {
-//     let item = document.createElement("div");
-//     item.classList.add("item");
-//     item.innerHTML = `<img class="beach-image" src="${response.url}" alt="beach image"/>`;
-//     document.body.appendChild(item);
-//   });
-// }
+function timer() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(showImage());
+    }, 10000);
+  });
+}
 
 async function displayAsync() {
-  await showImage();
-  await showImage();
+  await timer();
+  await timer();
   //   await showImage2();
 }
